@@ -10,13 +10,13 @@
         </div>
       </swiper-slide>
     </swiper>
-  </div> 
+  </div>
 </template>
 
 <script>
 export default {
   name: 'HomeIcons',
-  data() {
+  data () {
     return {
       iconList: [
         {
@@ -54,12 +54,12 @@ export default {
           imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
           desc: '自然风光'
         },
-                {
+        {
           index: '008',
           imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
           desc: '自然风光'
         },
-                {
+        {
           index: '009',
           imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png',
           desc: '自然风光'
@@ -72,7 +72,7 @@ export default {
       const pages = []
       this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
-        if(!pages[page]){
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)
@@ -85,6 +85,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/variables.styl'
+  @import '~styles/mixins.styl'
   .icons
     overflow: hidden
     height: 0
@@ -110,13 +111,12 @@ export default {
           margin: 0 auto
           height: 100%
       .icon-desc
-        position: absolute 
+        position: absolute
         left: 0
         right: 0
         bottom: 0
         height: .44rem
         line-height: .44rem
         text-align: center
+        ellipsis()
 </style>
-
-
