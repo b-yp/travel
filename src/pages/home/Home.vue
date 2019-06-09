@@ -40,8 +40,7 @@ export default {
     },
     getHomeInfoSucc (res) {
       res = res.data
-      if(res.ret && res.data){
-        console.log(res)
+      if (res.ret && res.data) {
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList
         this.recommendList = res.data.recommendList
