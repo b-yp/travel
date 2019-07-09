@@ -1,18 +1,39 @@
 <template>
   <div>
-    <div class="banner">
+    <div class="banner" @click="handleBannerClick">
       <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1511/51/51ad75c2b291aef490.img.jpg_600x330_d5c0f9d2.jpg" alt="">
       <div class="banner-info">
         <div class="banner-title">鸣翠湖国家湿地公园(AAAA景区)</div>
         <div class="banner-number"><span class="iconfont banner-icon">&#xe62f;</span>66</div>
       </div>
     </div>
+    <common-gallery
+      v-show="showGallery"
+      @close="handleGalleryClose"
+    ></common-gallery>
   </div>
 </template>
 
 <script>
+import CommonGallery from 'common/gallery/Gallery'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      showGallery: false
+    }
+  },
+  components: {
+    CommonGallery
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallery = true
+    },
+    handleGalleryClose () {
+      this.showGallery = false
+    }
+  }
 }
 </script>
 
