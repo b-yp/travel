@@ -38,6 +38,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -56,6 +59,7 @@ export default {
     line-height: .8rem
     text-align: center
   .header-fixed
+    z-index: 2
     position: fixed
     left: 0
     top: 0
